@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:batch="http://www.springframework.org/schema/batch" xmlns:util="http://www.springframework.org/schema/util" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+		http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-3.0.xsd ">
+
+	<import resource="app-resource.xml" />
+
+	<context:component-scan base-package="org.rubik.sandbox.batch" />
+
+	<bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+		<property name="jobRepository" ref="jobRepository" />
+	</bean>
+
+	<bean id="jobRepository" class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean" />
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    	<property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+
+	<batch:job id="mediaJob">
+		<batch:step id="mediaStep">
+			<batch:tasklet>
+				<batch:chunk reader="mediaItemReader" writer="mediaItemWriter" commit-interval="10" />
+			</batch:tasklet>
+		</batch:step>
+	</batch:job>
+
+	<bean id="mediaItemReader" class="org.springframework.batch.item.xml.StaxEventItemReader">
+		<property name="fragmentRootElementName" value="media" />
+		<property name="unmarshaller" ref="mediaUnmarshaller" />
+		<property name="resource" value="classpath:/data/media.xml" />
+	</bean>
+
+	<bean id="mediaUnmarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="classesToBeBound">
+			<util:list>
+				<value>org.rubik.sandbox.batch.domain.Media</value>
+			</util:list>
+		</property>
+	</bean>
+
+	<bean id="mediaItemWriter" class="org.springframework.batch.item.database.JpaItemWriter">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<batch:job id="playJob">
+		<batch:step id="playStep">
+			<batch:tasklet>
+				<batch:chunk reader="playItemReader" writer="playItemWriter" commit-interval="10" />
+			</batch:tasklet>
+		</batch:step>
+	</batch:job>
+	
+	<bean id="playItemReader" class="org.springframework.batch.item.xml.StaxEventItemReader">
+		<property name="fragmentRootElementName" value="Play" />
+		<property name="unmarshaller" ref="playUnmarshaller" />
+		<property name="resource" value="classpath:/data/play.xml" />
+	</bean>
+
+	<bean id="playUnmarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="classesToBeBound">
+			<util:list>
+				<value>org.rubik.sandbox.batch.domain.Play</value>
+			</util:list>
+		</property>
+	</bean>
+
+	<!-- 
+	<bean id="playUnmarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
+		<property name="aliases">
+			<util:map id="aliases">
+				<entry key="Play" value="org.rubik.sandbox.batch.domain.Play" />
+			</util:map>
+		</property>
+	</bean>
+	-->
+
+	<bean id="playItemWriter" class="org.springframework.batch.item.database.JpaItemWriter">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<!-- 
+	<batch:job id="reportJob">
+		<batch:step id="reportStep">
+			<batch:tasklet>
+				<batch:chunk reader="reportItemReader" processor="reportProcessor" writer="reportItemWriter" commit-interval="10" />
+			</batch:tasklet>
+		</batch:step>
+	</batch:job>
+
+	<bean id="reportItemReader" class="org.springframework.batch.item.xml.StaxEventItemReader">
+		<property name="fragmentRootElementName" value="record" />
+		<property name="unmarshaller" ref="reportUnmarshaller" />
+		<property name="resource" value="classpath:/data/report.xml" />
+	</bean>
+
+	<bean id="reportUnmarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
+		<property name="aliases">
+			<util:map id="aliases">
+				<entry key="record" value="org.rubik.sandbox.batch.domain.Report" />
+				<entry key="date" value="java.util.Date" />
+				<entry key="earning" value="java.math.BigDecimal" />
+			</util:map>
+		</property>
+		<property name="converters">
+			<util:list>
+				<ref bean="reportConvert" />
+			</util:list>
+		</property>
+	</bean>
+
+	<bean id="reportItemWriter" class="org.springframework.batch.item.database.JpaItemWriter">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+	-->
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="persistenceUnitName" value="SpringJpa" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="${jpa.showSql}" />
+                <property name="generateDdl" value="${jpa.generateDdl}" />
+                <property name="database" ref="mysql" />
+            </bean>
+        </property>
+    </bean>
+
+	<bean id="mysql" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">  
+		<property name="staticField" value="org.springframework.orm.jpa.vendor.Database.MYSQL" />  
+	</bean>
+
+	<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="maxActive" value="${jdbc.maxActive}" />
+           <property name="maxIdle" value="${jdbc.maxIdle}" />
+           <property name="minIdle" value="0" />
+           <property name="defaultAutoCommit" value="false" />
+	</bean>
+
+</beans>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Busap version="1" date="2013-05-26" group="010" createTime="2014-05-20 23:30:30">
+	<Play>
+		<Name>大阅兵2009 第十二集国之利器</Name>
+		<Type>节目_2013.09.25类</Type>
+		<FileName>06C17B0EED86E4F9EB7FE5C922C3DBFA.MPG</FileName>
+		<Size>31522736</Size>
+		<Long>181</Long>
+		<Start>00:00:00</Start>
+	</Play>
+	<Play>
+		<Name>画中看龙舟</Name>
+		<Type>广告_2013.09.25类</Type>
+		<FileName>99A45FA921E50A8A043167DA7FF8B28F.MPG</FileName>
+		<Size>10502156</Size>
+		<Long>60</Long>
+		<Start>00:03:60</Start>
+	</Play>
+</Busap>

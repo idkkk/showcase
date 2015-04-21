@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<context:property-placeholder location="classpath:config.properties" />
+
+	<context:component-scan base-package="org.rubik.sandbox.concurrent" />
+
+	<bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+		<property name="hostName" value="${redis.ip}" />
+		<property name="port" value="${redis.port}" />
+	</bean>
+
+	<bean id="redisAtomicLong" class="org.springframework.data.redis.support.atomic.RedisAtomicLong">
+		<constructor-arg name="redisCounter" value="counter" />
+		<constructor-arg name="factory" ref="jedisConnectionFactory" />
+	</bean>
+
+	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+		<property name="connectionFactory" ref="jedisConnectionFactory" />
+	</bean>
+
+	<bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="200" />
+		<property name="keepAliveSeconds" value="200" />
+		<property name="maxPoolSize" value="800" />
+		<property name="queueCapacity" value="200" />
+	</bean>
+
+</beans>

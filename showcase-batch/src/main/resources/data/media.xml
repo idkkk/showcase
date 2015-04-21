@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Busap version="1">
+	<media name="墙来了_正大综艺" file="0D76C96BFB9AD484D0E91DEF812AE2C4.MPG" section="综艺|娱乐|2014">
+		<picture name="正大综艺" file="未知.jgp"></picture>
+		<descript>《正大综艺·墙来啦！》是央视一套频道制改制以来首次原汁原味引进的国外大型游戏综艺节目，此前该节目已在38个国家和地区陆续播出。</descript>
+	</media>
+	<media name="影视赞着看" file="0E7F15D3349E0F3883AE1D6F32685ED0.MPG" section="电影|娱乐|播报">
+		<picture name="影视" file="不知道.jpg"></picture>
+		<descript>内容涵盖电影、电视剧、微电影等全影视领域，为你一网打尽全影视界的最新资讯！为你带来，最具权威的影视排行，最具态度的影视推荐，以及最具乐趣的片场探班，更有超多当红大牌演员来做客！</descript>
+	</media>
+	<media name="优卡丹广告" file="0EF73FEA84226B22108EA36839FE1834.MPG" section="广告时段|优卡丹">
+		<picture name="广告截图" file="编一个.jpg"></picture>
+		<descript>适用于缓解儿童普通感冒及流行性感冒引起的发热、头痛、四肢酸痛、打喷嚏、流鼻涕、鼻塞、咽痛等症状，也可用于儿童流行性感冒的预防和治疗。</descript>
+	</media>
+	<media name="家乐_浓汤宝广告" file="AD2ECF1124ABB13D1C915B11126EC839.MPG" section="广告时段|浓汤宝">
+		<picture name="广告截图" file="编一个.jpg"></picture>
+		<descript>浓汤宝是联合利华旗下的家乐品牌2007在年中国推出的一款方便食品，其外观类似胶状物，放入沸水融化后即可制成对应口味的汤制品。</descript>
+	</media>
+	<media name="吉尼斯_中国之夜" file="C1849812DA8012A05CC240CC4F7A4C9C.MPG" section="广告时段|优卡丹">
+		<picture name="中国之夜" file="编不出来了.jpg"></picture>
+		<descript>中央电视台《吉尼斯中国之夜》是英国吉尼斯总部在中国内地唯一官方电视合作机构。2006年开播以来在《吉尼斯中国之夜》的舞台上，诞生了200多项新的世界纪录。</descript>
+	</media>
+</Busap>

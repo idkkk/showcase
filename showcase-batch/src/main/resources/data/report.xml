@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<report>
+	<record id="1">
+		<date>2014-06-1</date>
+		<impression>139,237</impression>
+		<clicks>40</clicks>
+		<earning>220.90</earning>
+	</record>
+	<record id="2">
+		<date>2014-6-2</date>
+		<impression>339,100</impression>
+		<clicks>60</clicks>
+		<earning>320.88</earning>
+	</record>
+	<record id="3">
+		<date>2014-06-03</date>
+		<impression>431,436</impression>
+		<clicks>76</clicks>
+		<earning>270.80</earning>
+	</record>
+	<record id="4">
+		<date>2014-06-21</date>
+		<impression>431436</impression>
+		<clicks>76</clicks>
+		<earning>270.80</earning>
+	</record>
+	<record id="5">
+		<date>2014-06-21</date>
+		<impression>431436</impression>
+		<clicks>76</clicks>
+		<earning>270.80</earning>
+	</record>
+	<record id="6">
+		<date>2014-06-21</date>
+		<impression>431436</impression>
+		<clicks>76</clicks>
+		<earning>270.80</earning>
+	</record>
+	<record id="7">
+		<date>2014-06-21</date>
+		<impression>431436</impression>
+		<clicks>76</clicks>
+		<earning>270.80</earning>
+	</record>
+	<record id="8">
+		<date>2014-06-21</date>
+		<impression>431436</impression>
+		<clicks>76</clicks>
+		<earning>270.80</earning>
+	</record>
+	<record id="9">
+		<date>2014-06-21</date>
+		<impression>431436</impression>
+		<clicks>76</clicks>
+		<earning>270.80</earning>
+	</record>
+	<record id="10">
+		<date>2014-06-21</date>
+		<impression>431436</impression>
+		<clicks>76</clicks>
+		<earning>270.80</earning>
+	</record>
+	<record id="11">
+		<date>2014-06-21</date>
+		<impression>431436</impression>
+		<clicks>76</clicks>
+		<earning>270.80</earning>
+	</record>
+</report>
