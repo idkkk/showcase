@@ -1,2 +1,2 @@
 # showcase
-open source tools show case
+Java OpenSource Tools Showcase.
