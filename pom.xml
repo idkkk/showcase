@@ -24,6 +24,7 @@
 		<module>showcase-amqp</module>
 		<module>showcase-batch</module>
 		<module>showcase-concurrent</module>
+		<module>showcase-datasource</module>
 		<module>showcase-guava</module>
 		<module>showcase-hystrix</module>
 		<module>showcase-jdk8</module>
