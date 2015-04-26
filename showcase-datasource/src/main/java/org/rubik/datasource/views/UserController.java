@@ -36,6 +36,7 @@ public class UserController extends BaseController {
 	}
 
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
+	@ResponseBody
 	public List<User> list() {
 		List<User> users = userService.findAll();
 		return users;

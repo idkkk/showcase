@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import com.google.common.util.concurrent.RateLimiter;
 
@@ -22,7 +21,7 @@ import com.google.common.util.concurrent.RateLimiter;
  * @author xiajinxin
  * @since 2015-04-25
  */
-@Component
+//@Component
 public class RateLimitFilter implements Filter {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(RateLimitFilter.class);
@@ -48,5 +47,4 @@ public class RateLimitFilter implements Filter {
 	@Override
 	public void destroy() {
 	}
-
 }

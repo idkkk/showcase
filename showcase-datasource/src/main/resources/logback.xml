@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<substitutionProperty name="log.base"
-		value="../logs/showcase-spring" />
+		value="../logs/showcase-datasource" />
 	<jmxConfigurator />
 
 	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
@@ -41,7 +41,7 @@
 	</logger>
 	
 	<root>
-		<level value="ERROR" />
+		<level value="WARN" />
 		<appender-ref ref="stdout" />
 		<appender-ref ref="logfile" />
 	</root>
