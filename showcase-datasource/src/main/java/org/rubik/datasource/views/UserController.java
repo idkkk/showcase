@@ -17,10 +17,10 @@ public class UserController extends BaseController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping(value = "/user/{name}", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/{age}", method = RequestMethod.GET)
 	@ResponseBody
-	public User findUserById(@PathVariable("name") String name) {
-		User user = userService.findByName(name);
+	public User findUserById(@PathVariable("age") int age) {
+		User user = userService.findByAge(age);
 		if (user != null) {
 			return user;
 		} else {

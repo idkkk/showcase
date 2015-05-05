@@ -27,7 +27,6 @@ public class UserController {
 
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
 	public String findUserById(@PathVariable("id") Long id, ModelMap model) {
-		LOGGER.debug("Parameter[Id]: {}", id);
 		User user = userService.findById(id);
 		model.addAttribute("user", user);
 		return "/user/userForm";

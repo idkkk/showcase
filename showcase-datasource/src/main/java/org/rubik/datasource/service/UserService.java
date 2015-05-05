@@ -21,6 +21,11 @@ public class UserService {
 		return userRepository.findOne(name);
 	}
 
+    @Cacheable(value = "userCache", key="(#age + '')")
+	public User findByAge(int age) {
+		return userRepository.findOne(age);
+	}
+    
 	public List<User> findAll() {
 		return userRepository.findAll();
 	}

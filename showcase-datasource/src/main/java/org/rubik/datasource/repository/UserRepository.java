@@ -13,6 +13,18 @@ public class UserRepository {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
+	public User findOne(int age) {
+		String sql = "select * from t_user where age=?";
+		Object[] args = new Object[]{ age };
+		List<User> users = jdbcTemplate.query(sql, args, BeanPropertyRowMapper.newInstance(User.class));
+
+		User user = null;
+		if (users.size() != 0) {
+			user = users.get(0);
+		}
+		return user;
+	}
+	
 	public User findOne(String name) {
 		String sql = "select * from t_user where name=?";
 		Object[] args = new Object[]{ name };

@@ -29,7 +29,7 @@
 	</appender>
 	
 
-	<logger name="org.rubik.sandbox.concurrent" level="debug" additivity="false">
+	<logger name="org.rubik.sandbox.redis" level="debug" additivity="false">
 		<appender-ref ref="logfile" />
 		<appender-ref ref="stdout" />
 	</logger>

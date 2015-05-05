@@ -19,7 +19,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    @Cacheable(value = "sandbox:spring:user")
+    @Cacheable(value = "userCache", key = "#id")
 	public User findById(Long id) {
 		return userRepository.findOne(id);
 	}
