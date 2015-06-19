@@ -19,7 +19,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    @Cacheable(value = "userCache", key = "#id")
+//    @Cacheable(value = "userCache", key = "#id")
 	public User findById(Long id) {
 		return userRepository.findOne(id);
 	}
@@ -28,5 +28,11 @@ public class UserService {
 		return Lists.newArrayList(userRepository.findAll());
 	}
 
-    
+	public void delete(Long id) {
+		userRepository.delete(id);
+	}
+
+	public void save(User user) {
+		userRepository.save(user);
+	}
 }

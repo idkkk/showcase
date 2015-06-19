@@ -19,8 +19,19 @@ public class User extends AbstractPersistable<Long> {
 
 	private Integer age;
 
-	private Date birthday;
+	private String birthday;
 
+	@Override
+	public void setId(Long id) {
+		super.setId(id);
+	}
+
+	@Override
+	public Long getId() {
+		return super.getId();
+	}
+
+	
 	public String getName() {
 		return name;
 	}
@@ -45,11 +56,11 @@ public class User extends AbstractPersistable<Long> {
 		this.age = age;
 	}
 
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(Date birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 }

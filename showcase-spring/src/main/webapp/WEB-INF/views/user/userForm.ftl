@@ -4,25 +4,29 @@
     <li class="active">用户管理</li>
   </ol>
   <ul class="list-group">
-  	<input type="hidden" id="id" value="${user.id}">
+  	<form action="${rc.getContextPath()}/user/update" method="post">
+  	<input type="hidden" name="user.id" value="${user.id}" />
+  	<input type="hidden" name="_method" value="put" />
     <li class="list-group-item">
       <label for="name">名称</label>
-      <input type="text" class="form-control" id="name" value="${user.name}" readonly>
+      <input type="text" name="user.name" value="${user.name}" class="form-control" />
     </li>
     <li class="list-group-item">
       <label for="city">城市</label>
-      <input type="text" class="form-control" id="city" value="${user.city}" readonly>
+      <input type="text" name="user.city" value="${user.city}" class="form-control" />
     </li>
     <li class="list-group-item">
       <label for="age">年龄</label>
-      <input type="text" class="form-control" id="age" value="${user.age}" readonly>
+      <input type="text" name="user.age" value="${user.age}" class="form-control" />
     </li>
     <li class="list-group-item">
       <label for="birthday">生日</label>
-      <input type="text" class="form-control" id="birthday" value="${(user.birthday)?string("yyyy-MM-dd")}" readonly>
+      <input type="text" name="user.birthday" value="${user.birthday}" class="form-control" />
     </li>
     <li class="list-group-item">
+      <button type="submit" class="btn btn-default">提交</button>
       <button type="button" class="btn btn-default">返回</button>
     </li>
+    </form>
   </ul>
 </@layout.listView>

@@ -44,12 +44,12 @@ public class UserRepository {
 
 	public void saveOrUpdate(User user) {
 		if (user.getId() != null) {
-			String sql = "update user set name=?, age=?, birthday=?, city=?, name=? where id=?";
-			Object[] args = new Object[]{ user.getName(), user.getAge(), user.getBirthday(), user.getCity(), user.getName(), user.getId() };
+			String sql = "update t_user set name=?, age=?, birthday=?, city=? where id=?";
+			Object[] args = new Object[]{ user.getName(), user.getAge(), user.getBirthday(), user.getCity(), user.getId() };
 			jdbcTemplate.update(sql, args);
 		} else {
-			String sql = "insert into user(name, age, birthday, city, name) values(?, ?, ?, ?, ?)";
-			Object[] args = new Object[]{ user.getName(), user.getAge(), user.getBirthday(), user.getCity(), user.getName() };
+			String sql = "insert into t_user(name, age, birthday, city) values(?, ?, ?, ?)";
+			Object[] args = new Object[]{ user.getName(), user.getAge(), user.getBirthday(), user.getCity() };
 			jdbcTemplate.update(sql, args);
 		}
 		

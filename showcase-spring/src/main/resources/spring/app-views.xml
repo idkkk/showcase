@@ -33,7 +33,9 @@
 		<aop:pointcut id="allServiceMethods" expression="within(org.rubik.spring.views..*)"/>
 		<aop:advisor pointcut-ref="allServiceMethods" advice-ref="timingAdvice" />
 	</aop:config>
-	
+
+	<bean id="multipartResolver" class="org.rubik.spring.ext.ExtendedMultipartResolver"/>
+
 	<bean id="timingAdvice" class="org.springframework.aop.interceptor.PerformanceMonitorInterceptor" />
 
     <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">

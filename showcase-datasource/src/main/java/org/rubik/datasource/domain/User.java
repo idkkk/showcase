@@ -1,10 +1,8 @@
 package org.rubik.datasource.domain;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable {
-	private static final long serialVersionUID = 4673927988958661061L;
+public class User {
 
 	private Long id;
 

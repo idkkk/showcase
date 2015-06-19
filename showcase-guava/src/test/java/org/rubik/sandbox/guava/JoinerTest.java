@@ -8,8 +8,10 @@ import org.junit.Test;
 
 import junit.framework.TestCase;
 
+import com.google.common.base.Charsets;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Maps;
+import com.google.common.hash.Hashing;
 
 /**
  * Joiner测试用例.
@@ -61,5 +63,16 @@ public class JoinerTest extends TestCase {
 		map.put("C", "003");
 		String values = Joiner.on(",").withKeyValueSeparator("=>").join(map);
 		assertEquals("A=>001,B=>002,C=>003", values);
+
+		//  //id, infoid, token, username, vote
+		Map<String, String> data = Maps.newTreeMap();
+		data.put("username", "18585888324");
+		data.put("token", "c00e96982f022fdf9d2f5c052c26f41b");
+		data.put("infoid", "e5da0ead62194e8cbe6e77cb905bbdf4");
+		data.put("id", "4028e4484d74f981014d7933e7aa004c");
+		data.put("vote", "1");
+		String result = Joiner.on("").withKeyValueSeparator("=").join(data);
+		String signature = Hashing.md5().hashString(result, Charsets.UTF_8).toString();
+		assertEquals("9f8e9d55eeb64309ff9316b1261379a9", signature);
 	}
 }

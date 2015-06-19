@@ -17,11 +17,11 @@
       <tbody>
       	<#list users as user>
         <tr>
-          <td>${user_index + 1}</td>
+          <td>${user.id}</td>
           <td>${user.name}</td>
           <td>${user.city}</td>
           <td>${user.age}</td>
-          <td>${(user.birthday)?string("yyyy-MM-dd HH:mm:ss EEEE")}</td>
+          <td>${user.birthday}</td>
         </tr>
         </#list>
       </tbody>

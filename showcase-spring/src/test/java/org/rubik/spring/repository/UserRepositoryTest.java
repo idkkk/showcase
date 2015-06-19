@@ -26,7 +26,7 @@ public class UserRepositoryTest {
 		user.setName("kevin");
 		user.setCity("北京");
 		user.setAge(30);
-		user.setBirthday(new Date());
+		user.setBirthday("2015-06-08");
 
 		user = repository.save(user);
 

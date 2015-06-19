@@ -128,6 +128,11 @@
                 <property name="database" ref="mysql" />
             </bean>
         </property>
+        <property name="jpaProperties">
+           <props>
+             <prop key="hibernate.hbm2ddl.auto">update</prop>
+           </props>
+        </property>
     </bean>
 
 	<bean id="mysql" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">  

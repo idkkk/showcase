@@ -20,16 +20,21 @@
 		<module>showcase-concurrent</module>
 		<module>showcase-datasource</module>
 		<module>showcase-dropwizard</module>
+		<module>showcase-fastdfs</module>
 		<module>showcase-guava</module>
 		<module>showcase-hystrix</module>
+		<module>showcase-IKAnalyzer</module>
 		<module>showcase-jdk8</module>
+		<module>showcase-jersey</module>
 		<module>showcase-netflix</module>
 		<module>showcase-okhttp</module>
 		<module>showcase-redis</module>
+		<module>showcase-reactor</module>
 		<module>showcase-rxjava</module>
 		<module>showcase-rxnetty</module>
 		<module>showcase-ribbon</module>
 		<module>showcase-spring</module>
+		<module>showcase-utils</module>
 	</modules>
 
 	<dependencies>
