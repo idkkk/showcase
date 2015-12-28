@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
+import static java.util.stream.Collectors.*;
 
 public class CollectionApp {
 	private static List<String> persons = Arrays.asList("张晓明", "张鹏", "李如钢",
@@ -20,7 +20,7 @@ public class CollectionApp {
 			"ZhangPeng", "LiRuGang", "LiuYingGang", "LiPing", "LiMing",
 			"HeJinFan", "MeiXueFei", "WangYiJun", "ShenJinJun",
 			"SongChongFeng", "ChenHongBin", "WangZhanMing", "WangYiFan",
-			"ChenMuRong", "XuYang", "HuaYongBin", "NieGeng");
+			"ChenMuRong", "XuYang", "HuaYongBin", "WangYiJun", "NieGeng");
 
 	public static void forEach() {
 		System.out.println("==========  1 ============");
@@ -55,15 +55,14 @@ public class CollectionApp {
 
 	public static void counter() {
 		System.out.println("==========  Counter ============");
-		Map<String, Integer> result = letters.stream()
-						.collect(Collectors.toMap(a -> a, a -> Integer.valueOf(a.length())));
+		Map<String, Long> result = letters.stream().collect(groupingBy(word -> word, counting()));
 		System.out.println(result);
 	}
-	
+
 	public static List<String> toFilter(List<String> source) {
 		System.out.println("==========  filter ============");
 		return source.stream().filter(item -> item.startsWith("Wang"))
-				.collect(Collectors.toList());
+				.collect(toList());
 	}
 
 	public static void dry() {

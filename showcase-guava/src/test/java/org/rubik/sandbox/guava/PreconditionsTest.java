@@ -5,6 +5,8 @@ import junit.framework.TestCase;
 
 import org.junit.Test;
 
+import com.google.common.base.Preconditions;
+
 /**
  * Preconditions测试用例.
  */
@@ -38,19 +40,19 @@ public class PreconditionsTest extends TestCase {
 		}
 	}
 
-	@Test
-	public void testCheckArgument() {
-		int age = 35;
-		checkArgument((age > 0 && age < 150), "年龄必须是介于0～150之间！(%s)", age);
+@Test
+public void testCheckArgument() {
+	int age = 35;
+	Preconditions.checkArgument((age > 0 && age < 150), "年龄必须是介于0～150之间！(%s)", age);
 
-		age = 300;
-		try {
-			checkArgument((age > 0 && age < 150), "年龄必须是介于0～150之间！(%s)", age);
-			assertTrue(false);
-		} catch (IllegalArgumentException e) {
-			assertTrue(true);
-		}
+	age = 300;
+	try {
+		checkArgument((age > 0 && age < 150), "年龄必须是介于0～150之间！(%s)", age);
+		assertTrue(false);
+	} catch (IllegalArgumentException e) {
+		assertTrue(true);
 	}
+}
 
 	@Test
 	public void testCheckState() {

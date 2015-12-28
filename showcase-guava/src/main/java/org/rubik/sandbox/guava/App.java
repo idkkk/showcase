@@ -1,5 +1,6 @@
 package org.rubik.sandbox.guava;
 
+
 public class App {
 
 	/**

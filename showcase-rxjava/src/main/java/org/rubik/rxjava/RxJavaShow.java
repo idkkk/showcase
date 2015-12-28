@@ -2,15 +2,9 @@ package org.rubik.rxjava;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 import rx.Observable;
-import rx.internal.operators.OperatorRetryTest.Tuple;
-
 
 public class RxJavaShow {
 	private static String[] personArray = new String[]{"张晓明", "张鹏", "王义军", "陈洪斌", "李如钢",

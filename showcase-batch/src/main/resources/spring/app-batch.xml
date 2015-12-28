@@ -145,9 +145,9 @@
 		<property name="username" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
 		<property name="maxActive" value="${jdbc.maxActive}" />
-           <property name="maxIdle" value="${jdbc.maxIdle}" />
-           <property name="minIdle" value="0" />
-           <property name="defaultAutoCommit" value="false" />
+		<property name="maxIdle" value="${jdbc.maxIdle}" />
+		<property name="minIdle" value="0" />
+		<property name="defaultAutoCommit" value="false" />
 	</bean>
 
 </beans>

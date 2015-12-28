@@ -36,4 +36,10 @@ public class HashingTest extends TestCase {
 		String sha512 = Hashing.sha512().hashString(s, Charsets.UTF_8).toString();
 		assertEquals("3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79", sha512);
 	}
+
+	@Test
+	public void testCrc32() {
+		int value = Hashing.crc32().hashString("BYS:1970010108:169971", Charsets.UTF_8).asInt();
+		assertEquals(1530644774, value);
+	}
 }

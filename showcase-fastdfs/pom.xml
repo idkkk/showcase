@@ -96,7 +96,7 @@
 							</descriptorRefs>
 							<archive>
 								<manifest>
-									<mainClass>org.rubik.sandbox.guava.App</mainClass>
+									<mainClass>org.rubik.sandbox.fastdfs.App</mainClass>
 								</manifest>
 							</archive>
 						</configuration>
