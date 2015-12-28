@@ -27,7 +27,6 @@
 		<module>showcase-hystrix</module>
 		<module>showcase-jdk8</module>
 		<module>showcase-jersey</module>
-		<module>showcase-netflix</module>
 		<module>showcase-okhttp</module>
 		<module>showcase-opencv</module>
 		<module>showcase-parseq</module>
