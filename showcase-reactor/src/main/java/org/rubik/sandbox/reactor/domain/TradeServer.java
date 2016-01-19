@@ -1,6 +1,5 @@
 package org.rubik.sandbox.reactor.domain;
 
-
 import java.util.Random;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedTransferQueue;

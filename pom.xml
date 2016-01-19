@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.rubik.sandbox</groupId>
+	<groupId>org.rubik</groupId>
 	<artifactId>showcase</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>0.1.0</version>
 	<packaging>pom</packaging>
 
 	<name>showcase</name>
 	<url>http://www.rubik.org</url>
 
 	<properties>
+		<spring.boot.version>1.2.8.RELEASE</spring.boot.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -18,6 +20,7 @@
 		<module>showcase-amqp</module>
 		<module>showcase-analyzer</module>
 		<module>showcase-batch</module>
+		<module>showcase-cloud</module>
 		<module>showcase-concurrent</module>
 		<module>showcase-datasource</module>
 		<module>showcase-disruptor</module>
@@ -37,21 +40,20 @@
 		<module>showcase-rxnetty</module>
 		<module>showcase-ribbon</module>
 		<module>showcase-spring</module>
+		<module>showcase-tomcat7</module>
 		<module>showcase-utils</module>
+		<module>showcase-websocket</module>
 	</modules>
 
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.10</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.easymock</groupId>
-			<artifactId>easymock</artifactId>
-			<version>3.0</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>

@@ -1,0 +1,4 @@
+- hosts: reactor-test
+  roles:
+    - common
+    - test

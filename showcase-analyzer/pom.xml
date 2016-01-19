@@ -4,19 +4,18 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.rubik.sandbox</groupId>
+		<groupId>org.rubik</groupId>
 		<artifactId>showcase</artifactId>
-		<version>0.1.0-SNAPSHOT</version>
+		<version>0.1.0</version>
 	</parent>
 	<artifactId>showcase-analyzer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>showcase-analyzer</name>
 	<url>http://www.rubik.org</url>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <lucene.version>4.10.4</lucene.version>
-    </properties>
+	<properties>
+		<lucene.version>4.10.4</lucene.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -24,21 +23,21 @@
 			<artifactId>guava</artifactId>
 			<version>18.0</version>
 		</dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-core</artifactId>
-            <version>${lucene.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-queryparser</artifactId>
-            <version>${lucene.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-analyzers-common</artifactId>
-            <version>${lucene.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-core</artifactId>
+			<version>${lucene.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-queryparser</artifactId>
+			<version>${lucene.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-analyzers-common</artifactId>
+			<version>${lucene.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.wltea.ik-analyzer</groupId>
 			<artifactId>ik-analyzer</artifactId>
@@ -82,32 +81,6 @@
 				</executions>
 			</plugin>
 
-			<!-- 单个执行打包模式 -->
-			<!-- 
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>create-executable-jar</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						<configuration>
-							<descriptorRefs>
-								<descriptorRef>jar-with-dependencies</descriptorRef>
-							</descriptorRefs>
-							<archive>
-								<manifest>
-									<mainClass>org.rubik.sandbox.ik.App</mainClass>
-								</manifest>
-							</archive>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			-->
 		</plugins>
 	</build>
-
 </project>

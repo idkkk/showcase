@@ -27,12 +27,19 @@
 			</pattern>
 		</layout>
 	</appender>
-	
-	<logger name="org.springframework.aop.interceptor.PerformanceMonitorInterceptor" additivity="false">
+
+	<logger
+		name="org.springframework.aop.interceptor.PerformanceMonitorInterceptor"
+		additivity="false">
 		<level value="TRACE" />
 		<appender-ref ref="stdout" />
 	</logger>
-	
+
+	<logger name="org.rubik.spring" level="DEBUG" additivity="false">
+		<appender-ref ref="stdout" />
+		<appender-ref ref="logfile" />
+	</logger>
+
 	<root>
 		<level value="WARN" />
 		<appender-ref ref="stdout" />

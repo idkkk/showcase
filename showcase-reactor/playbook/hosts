@@ -1,0 +1,6 @@
+[reactor-dev]
+
+[reactor-test]
+172.16.21.78    ansible_ssh_user=root
+
+[reactor-prod]

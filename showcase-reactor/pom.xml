@@ -4,45 +4,19 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.rubik.sandbox</groupId>
+		<groupId>org.rubik</groupId>
 		<artifactId>showcase</artifactId>
-		<version>0.1.0-SNAPSHOT</version>
+		<version>0.1.0</version>
 	</parent>
 	<artifactId>showcase-reactor</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>showcase-reactor</name>
 	<url>http://www.rubik.org</url>
 
-	<properties>
-		<reactor.version>2.0.5.RELEASE</reactor.version>
-	</properties>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-dependencies</artifactId>
-				<version>1.2.5.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-undertow</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -54,19 +28,23 @@
 		</dependency>
 		<dependency>
 			<groupId>io.projectreactor</groupId>
-			<artifactId>reactor-core</artifactId>
-			<version>${reactor.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-bus</artifactId>
-			<version>${reactor.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.projectreactor.spring</groupId>
-			<artifactId>reactor-spring-context</artifactId>
-			<version>${reactor.version}</version>
+			<artifactId>reactor-spring-webmvc</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>io.reactivex</groupId>
+			<artifactId>rxjava</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+		<!-- 
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-data-redis</artifactId>
+		</dependency>
+		-->
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
@@ -82,19 +60,11 @@
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring.boot.version}</version>
 				<configuration>
-					<mainClass>org.rubik.sandbox.reactor.SpringTradeServer</mainClass>
-					<layout>ZIP</layout>
+					<executable>true</executable>
 				</configuration>
 				<executions>
 					<execution>

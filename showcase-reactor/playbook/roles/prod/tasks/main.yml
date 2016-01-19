@@ -1,0 +1,10 @@
+---
+- name: adding JAVA_OPTS in the bashrc files
+  lineinfile: dest=/root/.bashrc line='export JAVA_OPTS="-server -Xms2048m -Xmx2048m -Xmn512m -Djava.security.egd=file:/dev/./urandom"' state=present
+
+- name: source the bashrc file
+  shell: source /root/.bashrc
+
+- name: copy prod config
+  copy: src=../src/main/resources/application-prod.properties dest={{deploy_dir}}/application.properties owner=root group=root mode=0644
+  notify: restart application

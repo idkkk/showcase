@@ -1,0 +1,6 @@
+---
+- name: restart application
+  service: name={{app_name}} state=restarted
+
+- name: wait for application to start
+  wait_for: port={{http_port}}

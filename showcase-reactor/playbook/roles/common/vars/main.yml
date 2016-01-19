@@ -1,0 +1,4 @@
+---
+app_name: showcase-reactor
+http_port: 9090
+deploy_dir: /deploy/reactor

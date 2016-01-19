@@ -1,0 +1,20 @@
+---
+- name: install java 1.8
+  yum: name={{item}} state=present
+  with_items: java-1.8.0-openjdk
+
+- name: create deployment directory
+  file: path={{deploy_dir}} owner=root group=root state=directory recurse=yes
+
+- name: copy jar file
+  copy: src=../target/{{app_name}}.jar dest={{deploy_dir}}/{{app_name}}.jar owner=root group=root mode=0755
+  notify: restart application
+
+- name: create link
+  file: src={{deploy_dir}}/{{app_name}}.jar dest=/etc/init.d/{{app_name}} state=link
+
+- name: updating chkconfig
+  shell: chkconfig --add {{app_name}}
+
+- name: enable self start
+  service: name={{app_name}} enabled=yes

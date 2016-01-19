@@ -1,0 +1,4 @@
+- hosts: reactor-prod
+  roles:
+    - common
+    - prod
