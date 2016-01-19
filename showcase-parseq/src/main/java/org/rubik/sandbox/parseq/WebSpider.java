@@ -1,6 +1,3 @@
-/**
- * Copyright © 2015, Smartisan Digital Co., Ltd. All Rights Reserved.
- */
 package org.rubik.sandbox.parseq;
 
 import java.io.IOException;
