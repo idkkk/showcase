@@ -25,7 +25,7 @@ public class ReactorConfig {
 	public AsyncTaskExecutor singleThreadAsyncTaskExecutor(Environment env) {
 		RingBufferAsyncTaskExecutor asyncTaskExecutor = new RingBufferAsyncTaskExecutor(env);
 		asyncTaskExecutor.setName("ringBufferExecutor");
-		asyncTaskExecutor.setBacklog(2048);
+		asyncTaskExecutor.setBacklog(8192);
 		asyncTaskExecutor.setProducerType(ProducerType.SINGLE);
 		asyncTaskExecutor.setWaitStrategy(new YieldingWaitStrategy());
 		return asyncTaskExecutor;

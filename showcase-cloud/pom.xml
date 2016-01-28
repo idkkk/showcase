@@ -18,16 +18,27 @@
 	</properties>
 
 	<modules>
-		<module>showcase-cloud-client</module>
-		<module>showcase-cloud-server</module>
+		<module>account-service</module>
+		<module>order-service</module>
+		<module>support-gateway</module>
+		<module>support-monitor</module>
+		<module>support-registry</module>
 	</modules>
+
+	<repositories>
+		<repository>
+			<id>repo.spring.io</id>
+			<name>Spring Release Repository</name>
+			<url>https://repo.spring.io/libs-release-local</url>
+		</repository>
+	</repositories>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-starter-parent</artifactId>
-				<version>Angel.SR4</version>
+				<version>Angel.SR5</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

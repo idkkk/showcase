@@ -28,12 +28,10 @@ public class RateLimitFilter implements Filter {
 	
 	private static RateLimiter rateLimiter;
 
-	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		rateLimiter = RateLimiter.create(100.0); //每秒不超过100个任务被提交
 	}
 
-	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
 		if (rateLimiter.tryAcquire()) {
@@ -44,7 +42,6 @@ public class RateLimitFilter implements Filter {
 		}
 	}
 
-	@Override
 	public void destroy() {
 	}
 }

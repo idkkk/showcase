@@ -1,0 +1,4 @@
+2016-01-27 15:02:47,713 [main] INFO  org.rubik.monitor.MonitorServer - Starting MonitorServer on localhost with PID 25936 (/Users/xiajinxin/Dev/eclipse4.3/workspace/showcase/showcase-cloud/support-monitor/target/classes started by xiajinxin in /Users/xiajinxin/Dev/eclipse4.3/workspace/showcase/showcase-cloud/support-monitor)
+2016-01-27 15:02:47,719 [main] DEBUG org.rubik.monitor.MonitorServer - Running with Spring Boot v1.2.6.RELEASE, Spring v4.1.7.RELEASE
+2016-01-27 15:02:48,254 [main] INFO  org.rubik.monitor.MonitorServer - Started MonitorServer in 0.824 seconds (JVM running for 1.53)
+2016-01-27 15:02:51,508 [main] INFO  org.rubik.monitor.MonitorServer - Started MonitorServer in 4.169 seconds (JVM running for 4.784)

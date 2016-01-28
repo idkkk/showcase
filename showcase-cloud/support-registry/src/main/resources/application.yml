@@ -1,0 +1,21 @@
+server:
+  port: 8761
+
+
+---
+spring:
+  profiles: eureka1
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka2:8761/eureka/
+
+---
+spring:
+  profiles: eureka2
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka1:8761/eureka/
